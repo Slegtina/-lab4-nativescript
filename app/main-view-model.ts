@@ -74,6 +74,12 @@ export class CalendarModel extends Observable {
     this.reloadGrid(); // обновляем сетку
   }
 
+  today(args) {
+    this.currDay = dayjs(); // текущий месяц
+    this.setMonthName(); // обновляем отображаемый месяц
+    this.reloadGrid(); // обновляем сетку
+  }
+
   loadedGrid(args) {
     this.grid = args.object as GridLayout;
     const wd = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];

@@ -3,9 +3,10 @@
     <FlexboxLayout flexDirection="column" >
         <StackLayout orientation="horizontal">
             <Button class="next" text="<" tap="{{prev}}"/>
-            <Label class="today" text="{{monthName}}" />
+            <Button class="next" text="Сегодня" tap="{{today}}"/>
             <Button class="next" text=">" tap="{{next}}"/>
         </StackLayout>
+        <Label class="today" text="{{monthName}}" />
         <GridLayout rows="auto, auto, auto, auto, auto, auto, auto" columns="auto, auto, auto, auto, auto, auto, auto" loaded="{{loadedGrid}}">  
         </GridLayout>
     </FlexboxLayout>
