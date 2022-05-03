@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Календарь" icon=""/>
+    <FlexboxLayout flexDirection="column" >
+        <StackLayout orientation="horizontal">
+            <Button class="next" text="<" tap="{{prev}}"/>
+            <Label class="today" text="{{monthName}}" />
+            <Button class="next" text=">" tap="{{next}}"/>
+        </StackLayout>
+        <GridLayout rows="auto, auto, auto, auto, auto, auto, auto" columns="auto, auto, auto, auto, auto, auto, auto" loaded="{{loadedGrid}}">  
+        </GridLayout>
+    </FlexboxLayout>
+</Page>
