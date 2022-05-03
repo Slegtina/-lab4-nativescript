@@ -61,14 +61,12 @@ export class CalendarModel extends Observable {
   }
 
   prev(args) {
-    console.log("prev");
     this.currDay = this.currDay.subtract(1, 'month'); // вычитаем один месяц
     this.setMonthName(); // обновляем отображаемый месяц
     this.reloadGrid(); // обновляем сетку
   }
 
   next(args) {
-    console.log("next");
     this.currDay = this.currDay.add(1, 'month'); // прибавляем месяц
     this.setMonthName(); // обновляем отображаемый месяц
     this.reloadGrid(); // обновляем сетку
