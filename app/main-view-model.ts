@@ -34,22 +34,22 @@ export class CalendarModel extends Observable {
     this.labels[30].className="hide";
 
     let weeknum = 1;
-    let nextweek = true;
-    for(let i = 1; i <= endMonth.date(); i++){ // цикл по дням месяца
+    let nextweek = false;
+    for(let i = 0; i < endMonth.date(); i++){ // цикл по дням месяца
       
-      let currenDate = startMonth.add(i - 1, 'day'); // получаем текущий день цикла
+      let currenDate = startMonth.add(i, 'day'); // получаем текущий день цикла
 
-      this.labels[i-1].className="wd"; // применяем обычный стиль ко всем дням
+      this.labels[i].className="wd"; // применяем обычный стиль ко всем дням
 
       if (currenDate.day()===0){ // если сейчас воскресенье
-        GridLayout.setColumn(this.labels[i-1], 6);
+        GridLayout.setColumn(this.labels[i], 6);
         nextweek = true;
       }
       else{
-        GridLayout.setColumn(this.labels[i-1], currenDate.day() - 1);
+        GridLayout.setColumn(this.labels[i], currenDate.day() - 1);
       }
 
-      GridLayout.setRow(this.labels[i-1], weeknum);
+      GridLayout.setRow(this.labels[i], weeknum);
 
       if (nextweek){
         nextweek = false;
