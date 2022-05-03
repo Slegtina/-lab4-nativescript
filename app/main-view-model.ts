@@ -11,14 +11,16 @@ export class CalendarModel extends Observable {
   constructor() {
     super();
 
-    for(let i = 0; i < 31; i++){
+    // в цикле заполняем массив Label-ов
+    for(let i = 0; i < 31; i++){ 
       let label = new Label();
       label.text = String(i + 1);
       label.className="wd";
       this.labels.push(label)
     }
-    this.currDay = dayjs();
-    this.setMonthName();
+
+    this.currDay = dayjs(); // устанавливем текущий день
+    this.setMonthName(); // обновляем отображаемый месяц и год
   }
   
   private setMonthName(){
@@ -30,8 +32,10 @@ export class CalendarModel extends Observable {
     let startMonth = this.currDay.startOf('month'); // начало этого месяца
     let endMonth = this.currDay.endOf('month'); // конец этого месяца
 
-    this.labels[29].className="hide"; // скрываем 30 и 31 день
+    this.labels[28].className="hide"; // скрываем 29, 30 и 31 дни
+    this.labels[29].className="hide"; 
     this.labels[30].className="hide";
+    
 
     let weeknum = 1;
     let nextweek = false;
