@@ -4,7 +4,7 @@ import * as dayjs from 'dayjs'
 export class CalendarModel extends Observable {
   private grid: GridLayout;
 
-  private monthName: string; // отображаемый месяц
+  private monthName: string; // отображаемый месяц и год
   currDay: dayjs.Dayjs; // объект для хранения даты
   labels = []; // Массив Label-ов
 
@@ -23,7 +23,7 @@ export class CalendarModel extends Observable {
   
   private setMonthName(){
     const names = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-    this.set('monthName', names[this.currDay.get('month')]);
+    this.set('monthName', names[this.currDay.get('month')] + " " + this.currDay.get('year'));
   }
 
   private reloadGrid(){
