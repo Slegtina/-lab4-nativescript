@@ -20,19 +20,25 @@ This is where the vast majority of your CSS code goes. */
 The following CSS rule changes the font size of all Buttons that have the
 '-primary' class modifier.
 */
+
 Button.next {
-  font-size: 30;
+  font-size: 40;
+  text-align: center;
 }
 Label.today {
-  font-size: 30;
+  font-size: 40;
+  text-align: center;
+
 }
 Label.wd {
   font-size: 30;
+  text-align: center;
   visibility:visible;
 }
 Label.td {
   font-size: 30;
   color: crimson;
+  text-align: center;
 }
 Label.hide {
   visibility:hidden;
